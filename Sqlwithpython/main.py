@@ -13,4 +13,4 @@ sql = "INSERT INTO imenta(id,name,city) VALUES (1,'Georgi','Sofia')"
 mycursor.execute(sql)
 mydb.commit()
 
-print(mycursor.rowcount, "records deleted")
+print(mycursor.rowcount)
