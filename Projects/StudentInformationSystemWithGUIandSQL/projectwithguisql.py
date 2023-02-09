@@ -31,7 +31,7 @@ def ButtonFunciton(selection):
     if selection in ('Insert'):
         con = pymysql.connect(host='localhost',user='root',password='123brawo123',database='studentproject')
         cursr = con.cursor()
-        query = "CREATE TABLE IF NOT EXISTS student (id CHAR (20) PRIMARY KEY,name CHAR(20),address CHAR(20))"# reverses all changes if there is a Error with the rollback function
+        query = "CREATE TABLE IF NOT EXISTS student (id CHAR (20) PRIMARY KEY,name CHAR(20),address CHAR(20))"
         cursr.execute(query)
         con.commit()
         print("Table student created successfully")
@@ -43,7 +43,7 @@ def ButtonFunciton(selection):
             con.close()
         except :
             print("Error occurred at database data insertion")
-            con.rollback()
+            con.rollback()# reverses all changes if there is a Error with the rollback function
             con.close()
     elif selection in ('Update'):
         try:
